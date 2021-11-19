@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <title>Coding Quiz</title>
+  <link rel="stylesheet" href="./assets/css/style.css" />
+</head>
+
+<body>
+  <div class="scores"><a href="highscores.html">View Highscores</a></div>
+
+  <div class="timer">Time: <span id="time">0</span></div>
+
+  <main class="container">
+    <div id="start-screen" class="start">
+      <h1>Quiz Challenge!</h1>
+      <p>
+        Answer the following laboratory related questions within the time limit.
+        Everytime you answer a question correctly, your time will <strong>increase</strong> by five seconds!
+        Everytime you get a qeustion wrong, your time will <strong>decrease</strong> by ten seconds!
+      </p>
+      <button id="start">Start!</button>
+
+    </div>
+    <div id="difficulty" class="hide">
+      <h2>Choose your difficulty setting!</h2>
+      <div id="difficulty-choices" class= "choices"></div>
+    </div>
+
+    <div id="question" class="hide">
+      <h2 id="question-title"></h2>
+      <div id="question-choices" class= "choices"></div>
+    </div>
+
+    <div id="end-screen" class="hide">
+      <h2>End of the game!</h2>
+      <p>Your final score is <span id="final-score"></span>.</p>
+      <p>
+        Enter your Initials: <input type="text" id="initials" max="3">
+        <button id="submit">Submit</button>
+
+      </p>
+
+    </div>
+
+    <div id="feedback" class="feedback hide"></div>
+
+  </main>
+</body>
+</html>
