@@ -10,11 +10,15 @@
 </head>
 
 <body>
+  <video autoplay muted loop class="backgroundVideo">
+    <source src="./assets/media/heartbeat.mp4" type="video/mp4">
+  </video>
+<div class="container">
   <div class="scores"><a href="highscores.html">View Highscores</a></div>
 
   <div class="timer">Time: <span id="time">0</span></div>
 
-  <main class="container">
+  <main class="gameContainer">
     <div id="start-screen" class="start">
       <h1>Quiz Challenge!</h1>
       <p>
@@ -47,7 +51,10 @@
     </div>
 
     <div id="feedback" class="feedback hide"></div>
-
+    
   </main>
+</div>
+    <script src="./assets/js/questions.js"></script>
+    <script src="./assets/js/script.js"></script>
 </body>
 </html>

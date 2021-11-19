@@ -1,0 +1,32 @@
+/* ------------------------------Background styling-------------------------------- */
+
+.backgroundVideo {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    min-width: 100%;
+    min-height: 100%;
+    z-index: -1;
+  }
+/* -------------------------/end Background styling-------------------------------- */
+
+/* -----------------------Overall Container styling-------------------------------- */
+.container{
+  max-width: 500px;
+  margin: auto;
+  background: transparent;
+  padding: 10px;
+}
+/* ------------------/end Overall Container styling-------------------------------- */
+
+.hide {
+    display: none;
+  }
+.content {
+    position: fixed;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    color: #f1f1f1;
+    width: 100%;
+    padding: 20px;
+  }
