@@ -10,15 +10,51 @@
   }
 /* -------------------------/end Background styling-------------------------------- */
 
-/* -----------------------Overall Container styling-------------------------------- */
+/* -------------------------------Container styling-------------------------------- */
 .container{
-  max-width: 500px;
+  max-width: 100%;
+  max-height: 100%;
   margin: auto;
-  background: transparent;
-  padding: 10px;
-}
-/* ------------------/end Overall Container styling-------------------------------- */
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content:space-around;
 
+}
+.tidbit{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin: auto;
+ 
+}
+.gameContainer{
+  width: 50%;
+  height: 50%;
+  margin: auto;
+  background:rgba(255, 255, 255, 0.50);
+  padding: 10px;
+  color: black;
+  outline: white;
+  outline-width: 50px;
+}
+
+.score .timer{
+  border-radius: 10px;
+}
+/* ---------------------------/end Container styling-------------------------------- */
+
+.button{
+  background-color: #4CAF50; /* Green */
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+}
 .hide {
     display: none;
   }

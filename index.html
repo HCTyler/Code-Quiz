@@ -10,16 +10,18 @@
 </head>
 
 <body>
-  <video autoplay muted loop class="backgroundVideo">
+  <!-- <video autoplay muted loop class="backgroundVideo">
     <source src="./assets/media/heartbeat.mp4" type="video/mp4">
-  </video>
+  </video> -->
 <div class="container">
-  <div class="scores"><a href="highscores.html">View Highscores</a></div>
-
-  <div class="timer">Time: <span id="time">0</span></div>
+  
+  <div class= "tidbit">
+    <div class="scores"><a href="highscores.html">View Highscores</a></div>
+    <div class="timer">Time: <span id="time">0</span></div>
+  </div>
 
   <main class="gameContainer">
-    <div id="start-screen" class="start">
+    <div id="starting" class="start">
       <h1>Quiz Challenge!</h1>
       <p>
         Answer the following laboratory related questions within the time limit.
@@ -29,17 +31,13 @@
       <button id="start">Start!</button>
 
     </div>
-    <div id="difficulty" class="hide">
-      <h2>Choose your difficulty setting!</h2>
-      <div id="difficulty-choices" class= "choices"></div>
-    </div>
 
     <div id="question" class="hide">
-      <h2 id="question-title"></h2>
-      <div id="question-choices" class= "choices"></div>
+      <h2 id="questtitle"></h2>
+      <div id="questchoices" class= "choices"></div>
     </div>
 
-    <div id="end-screen" class="hide">
+    <div id="ending" class="hide">
       <h2>End of the game!</h2>
       <p>Your final score is <span id="final-score"></span>.</p>
       <p>
