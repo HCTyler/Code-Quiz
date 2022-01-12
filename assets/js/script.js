@@ -1,4 +1,8 @@
-var questions = document.getElementById("question");
+var currentQuestionIndex = 0;
+var time = question.length * 15; //takes the amount of questions there is and multiplies it. This serves as the base time.
+var timerInverval;
+
+var question = document.getElementById("question");
 var timer = document.getElementById("time");
 var choices = document.getElementById("choices");
 var submitButton = document.getElementById("submit");
@@ -6,18 +10,16 @@ var startButton = document.getElementById("start");
 var initials = document.getElementById("initials");
 var feedback = document.getElementById("feedback");
 
-var currentQuestionIndex = 0;
-var time = questions.length * 15;
-var timerId;
 
 function startGame(){
+    console.log("The game is starting")
     //taking the starting ID and hiding it
     var starting = document.getElementById("starting")
     starting.setAttribute("class","hide")
 
     //makes it so that the questions fill the container and sets up game
-    questions.removeAttribute("class")
-    timerId = setInterval(countdownTimer,1000)
+    question.removeAttribute("class")
+    timerInverval = setInterval(countdownTimer,1000)
     timer.textContent = time
 
     startQuestions()
@@ -25,13 +27,16 @@ function startGame(){
 }
 
 function startQuestions(){
-    var currentQ = questions[currentQuestionIndex]
-    var title = document.getElementById("questtitle")
-    title.textContent=currentQ.title
+    console.log("Game is now displaying the question")
+    var currentQuestion = question[currentQuestionIndex]
 
-    choices.innerHTML= " "
+    var title = document.getElementById("question-title")
+    title.textContent= currentQuestion.title
 
-    currentQ.choices.forEach(function(choice,i){
+    choices.innerHTML= ""
+
+    currentQuestion.choices.forEach(function(choice, i) {
+      
         var choiceDom = document.createElement("button")
         choiceDom.setAttribute("class","choice")
         choiceDom.setAttribute("value",choice)
@@ -43,6 +48,7 @@ function startQuestions(){
     })
 }
 
+//this is the function for timer
 function countdownTimer() {
     // update time
     time--;
@@ -51,7 +57,17 @@ function countdownTimer() {
     // check if user ran out of time
     if (time <= 0) {
       quizEnd();
+      console.log("game is now ending, going to display end screen")
+    } else {
+      getQuestion()
     }
   }
 
-startButton.onclick = startGame
+function quizEnd(){
+  console.log("game is now displaying the ending screen")
+  clearInterval(timerInverval);
+
+  var gameEnding = document.getElementById("ending")
+}
+
+startButton.onclick = startGame;
