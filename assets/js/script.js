@@ -2,7 +2,7 @@ var allTheStuff = 0;
 var time = thestuff.length * 15; //takes the amount of questions there is and multiplies it. This serves as the base time.
 var timerInverval;
 
-var question = document.getElementById("question");
+var questioncontain = document.getElementById("question");
 var timer = document.getElementById("time");
 var choices = document.getElementById("questchoices");
 var submitButton = document.getElementById("submit");
@@ -13,17 +13,12 @@ var feedback = document.getElementById("feedback");
 
 function startGame(){
     console.log("The game is starting")
-    //taking the starting ID and hiding it
-    var starting = document.getElementById("starting")
-    starting.setAttribute("class","hide")
-
-    //makes it so that the questions fill the container and sets up game
-    question.removeAttribute("class")
+    var starting = document.getElementById("starting")//taking the starting ID and hiding it
+    starting.setAttribute("class","hide")//makes it so that the questions fill the container and sets up game
+    questioncontain.removeAttribute("class")
     timerInverval = setInterval(countdownTimer,1000)
     timer.textContent = time
-
     stuff()
-
 }
 
 function stuff(){
@@ -33,12 +28,12 @@ function stuff(){
   title.textContent = questionDisplayed.title
   choices.innerHTML= "";
   questionDisplayed.option.forEach(function (pick, i) {
-      var choiceDom = document.createElement("button")
-      choiceDom.setAttribute("class","choice")
-      choiceDom.setAttribute("value",pick)
-      choiceDom.textContent = i + 1 + ". " + pick
-      choiceDom.onclick = questionSelected;
-      choices.appendChild(choiceDom)
+      var theChoices = document.createElement("button")
+      theChoices.setAttribute("class","choice")
+      theChoices.setAttribute("value",pick)
+      theChoices.textContent = i + 1 + ". " + pick
+      theChoices.onclick = questionSelected;
+      choices.appendChild(theChoices)
   })
 }
 function questionSelected(){
@@ -72,28 +67,33 @@ function noMoStuff(){
   var gameEnding = document.getElementById("ending")
   gameEnding.removeAttribute("class")
 
-  var scoresboard = document.getElementById("score")
+  var scoresboard = document.getElementById("final-score")
   scoresboard.textContent = time
 
-  question.setAttribute("class", "hide")
+  questioncontain.setAttribute("class", "hide")
 }
 
 
 //this is the function for timer
 function countdownTimer() {
-    // update time
-    time--;
-    timer.textContent = time;
-  
-    // check if user ran out of time
-    if (time <= 0) {
-      noMoStuff();
-      console.log("game is now ending, going to display end screen")
-    } else {
-      stuff()
-    }
-  }
+  // update time
+  time--;
+  timer.textContent = time;
 
+  // check if user ran out of time
+  if (time <= 0) {
+    noMoStuff();
+    console.log("game is now ending, going to display end screen")
+  }
+}
+
+function saveName(){
+  var thename = initials.value.trim()
+  if (initials !== ""){
+    var highscoresInitial = 
+    JSON.parse(window.localStorage.getElementById)
+  }
+}
 
 startButton.onclick = startGame;
 

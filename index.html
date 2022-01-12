@@ -23,13 +23,10 @@
       <h1>Quiz Challenge!</h1>
       <p>
         Answer the following laboratory related questions within the time limit.
-      
         Everytime you get a question wrong, your time will <strong>decrease</strong> by ten seconds!
-        
         So be careful!
       </p>
       <button id="start">Start Quiz!</button>
-
     </div>
 
     <div id="question" class="hide">
@@ -39,16 +36,22 @@
 
     <div id="ending" class="hide">
       <h2>End of the game!</h2>
-      <p>Your final score is <span id="score"></span>.</p>
+      <p>Your final score is <span id="final-score"></span>.</p>
       <p>
         Enter your Initials: <input type="text" id="initials" max="3">
         <button id="submit">Submit</button>
-
       </p>
-
     </div>
 
-    
+    <div id="highscores" class="hide">
+      <h2>The Scoreboard!</h2>
+      <div id="highscores" class="scorelist"></div>
+      <div>
+        <button id="restart">Play Again!</button>
+        <button id="clear">Clear Scores</button>
+      </div>
+    </div>
+
   </main>
 </div>
     <script src="./assets/js/questions.js"></script>
