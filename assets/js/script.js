@@ -1,14 +1,16 @@
-var allTheStuff = 0;
-var time = thestuff.length * 15; //takes the amount of questions there is and multiplies it. This serves as the base time.
-var timerInverval;
+var allTheStuff = 0
+var time = thestuff.length * 15 //takes the amount of questions there is and multiplies it. This serves as the base time.
+var timerInverval
 
-var questioncontain = document.getElementById("question");
-var timer = document.getElementById("time");
-var choices = document.getElementById("questchoices");
-var submitButton = document.getElementById("submit");
-var startButton = document.getElementById("start");
-var initials = document.getElementById("initials");
-var feedback = document.getElementById("feedback");
+var questioncontain = document.getElementById("question")
+var timer = document.getElementById("time")
+var choices = document.getElementById("questchoices")
+var submitButton = document.getElementById("submit")
+var startButton = document.getElementById("start")
+var initials = document.getElementById("initials")
+var feedback = document.getElementById("feedback")
+var gameEnding = document.getElementById("ending")
+var highscores = document.getElementById("highscores")
 
 
 function startGame(){
@@ -62,9 +64,8 @@ function questionSelected(){
 
 function noMoStuff(){
   console.log("game is now displaying the ending screen")
-  clearInterval(timerInverval);
+  clearInterval(timerInverval)
 
-  var gameEnding = document.getElementById("ending")
   gameEnding.removeAttribute("class")
 
   var scoresboard = document.getElementById("final-score")
@@ -73,6 +74,36 @@ function noMoStuff(){
   questioncontain.setAttribute("class", "hide")
 }
 
+function showHighScores(){
+  console.log("You clicked the button, so redirect to the highscores.")
+
+  var thename = initials.value.trim()
+
+  if (thename !== ""){
+    var highscoresInitial = 
+      JSON.parse(localStorage.getItem("thename")) || []
+      console.log("Initials are saved to:", thename)
+
+    var savingscores = {
+      score: time,
+      thename: thename
+    }
+
+    console.log(savingscores)
+    console.log(highscoresInitial)
+
+    highscoresInitial.push(savingscores)
+    window.localStorage.setItem("thename", JSON.stringify(highscoresInitial))
+    console.log(highscoresInitial)
+
+    showTheScore()
+  }
+}
+
+function showTheScore(){
+  gameEnding.setAttribute("class", "hide")
+  highscores.removeAttribute("class")
+}
 
 //this is the function for timer
 function countdownTimer() {
@@ -87,14 +118,8 @@ function countdownTimer() {
   }
 }
 
-function saveName(){
-  var thename = initials.value.trim()
-  if (initials !== ""){
-    var highscoresInitial = 
-    JSON.parse(window.localStorage.getElementById)
-  }
-}
 
 startButton.onclick = startGame;
+submitButton.onclick = showHighScores;
 
 
