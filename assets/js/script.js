@@ -81,7 +81,7 @@ function showHighScores(){
 
   if (thename !== ""){
     var highscoresInitial = 
-      JSON.parse(localStorage.getItem("thename")) || []
+      JSON.parse(localStorage.getItem("highscoresInitial")) || []
       console.log("Initials are saved to:", thename)
 
     var savingscores = {
@@ -93,17 +93,28 @@ function showHighScores(){
     console.log(highscoresInitial)
 
     highscoresInitial.push(savingscores)
-    window.localStorage.setItem("thename", JSON.stringify(highscoresInitial))
+    // window.localStorage.setItem("highscoresInitial", JSON.stringify(highscoresInitial))
     console.log(highscoresInitial)
 
-    showTheScore()
+    gameEnding.setAttribute("class", "hide")
+    highscores.removeAttribute("class")
+
+    highscoresInitial.sort(function(initial,seconds){
+      return initial.score - seconds.score
+    })
+
+    console.log(highscoresInitial + " This is the sorting initials")
+
+    highscoresInitial.forEach(function(score){
+      var list = document.createElement("li")
+      list.textContent = score.thename + " has the time of "+ score.score
+      var listHolder = document.getElementById("highscores")
+      listHolder.appendChild(list)
+    })
   }
 }
 
-function showTheScore(){
-  gameEnding.setAttribute("class", "hide")
-  highscores.removeAttribute("class")
-}
+
 
 //this is the function for timer
 function countdownTimer() {
