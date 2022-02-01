@@ -5,54 +5,22 @@ var thestuff = [
         answer:"Red Blood Cells"
 
     },
-    // {
-    //     title: "##",
-    //     option: ["##"],
-    //     answer: "##"
+    {
+        title: "What must a specimen label contain?",
+        option: ["Name of CPT", "Specimen source", "Patient MRN"],
+        answer: "Name of CPT"
 
-    // },
-    // {
-    //     title: "##",
-    //     option: ["##"],
-    //     answer: "##"
+    },
+    {
+        title: "What test tube is acceptable for a PT/INR test?",
+        option: ["Blood Culture", "Light Blue", " Lavendar" ],
+        answer: "Light Blue"
 
-    // },
-    // {
-    //     title: "##",
-    //     option: ["##"],
-    //     answer: "##"
+    },
+    {
+        title: "What is NOT included in a comprehensive metabolic panel test?",
+        option: ["Glucose", "Sodium", "Magnesium"],
+        answer: "Magnesium"
 
-    // },
-    // {
-    //     title: "##",
-    //     option: ["##"],
-    //     answer: "##"
-
-    // },
-    // {
-    //     title: "##",
-    //     option: ["##"],
-    //     answer: "##"
-
-    // },
-    // {
-    //     title: "##",
-    //     option: ["##"],
-    //     answer: "##"
-
-    // },
-    // {
-    //     title: "##",
-    //     option: ["##"],
-    //     answer: "##"
-
-    // },
-    // {
-    //     title: "##",
-    //     option: ["##"],
-    //     answer: "##"
-
-    // },
-
-
+    },
 ]

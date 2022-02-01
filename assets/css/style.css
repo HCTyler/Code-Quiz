@@ -11,7 +11,7 @@ p a div{
   font-size: 20px;
 }
 a {
-  font-size: 20px;
+  font-size: 50px;
   text-decoration: none;
   border-radius: 10%;
 }
@@ -20,17 +20,18 @@ a:hover{
 }
 
 span {
-  font-size: 20px;
+  font-size: 50px;
 }
 
 
 .backgroundVideo {
     position: fixed;
+    object-fit: fill;
     right: 0;
     bottom: 0;
     min-width: 100%;
     min-height: 100%;
-    z-index: -1;
+    z-index: -100;
   }
 /* -------------------------/end Background styling-------------------------------- */
 
@@ -41,9 +42,11 @@ span {
   margin: auto;
   text-align: center;
   display: flex;
-  flex-direction: column;
+  justify-content: center;
   align-items: center;
-  justify-content:space-around;
+  text-align: center;
+  min-height: 90vh;
+  
 }
 
 .tidbit{
@@ -53,25 +56,19 @@ span {
   justify-content: space-evenly;
   align-items: baseline;
   margin: auto;
-  /* column-gap: 90%; */
   width: 100%;
+}
+.scores, .timer {
+  background-color: rgba(245, 245, 245, 0.75);
 }
 
 .gameContainer{
-  /* width: 50%;
+  width: 50%;
   height: 50%;
   margin: auto;
   outline-width: 50px;
-  padding: 10px; */
-
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  min-height: 90vh;
-  width: 50%;
-
-  background:rgba(255, 255, 255, 0.50);
+  padding: 10px;
+  background:rgba(255, 255, 255, 0.808);
   color: black;
   outline: white;
 }

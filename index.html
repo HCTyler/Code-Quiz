@@ -10,14 +10,17 @@
 </head>
 
 <body>
+  <video autoplay muted loop class="backgroundVideo">
+    <source src="./assets/media/lab.mp4" type="video/mp4">
+  </video>
+  
+<div class= "tidbit">
+  <div class="scores"><a id= "link" href="#" onclick="viewHighScores();return false;">View Highscores</a></div>
+  <span class="timer">Time: <span id="time">0</span></span>
+</div>
 
 <div class="container">
   
-  <div class= "tidbit">
-    <div class="scores"><a id= "link" href="#" onclick="viewHighScores();return false;">View Highscores</a></div>
-    <span class="timer">Time: <span id="time">0</span></span>
-  </div>
-
   <main class="gameContainer">
     <div id="starting" class="start">
       <h1>Quiz Challenge!</h1>
