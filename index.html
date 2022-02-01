@@ -14,16 +14,17 @@
 <div class="container">
   
   <div class= "tidbit">
-    <div class="scores"><a href="highscores.html">View Highscores</a></div>
-    <div class="timer">Time: <span id="time">0</span></div>
+    <div class="scores"><a id= "link" href="#" onclick="viewHighScores();return false;">View Highscores</a></div>
+    <span class="timer">Time: <span id="time">0</span></span>
   </div>
 
   <main class="gameContainer">
     <div id="starting" class="start">
       <h1>Quiz Challenge!</h1>
       <p>
-        Answer the following laboratory related questions within the time limit.
-        Everytime you get a question wrong, your time will <strong>decrease</strong> by ten seconds!
+        Answer the following laboratory related questions within the time limit.<br>
+        If you get a question wrong, your time will <strong>decrease</strong> by ten seconds.<br>
+        If you answer the question correctly, your time will <strong>increase</strong> by three seconds!<br>
         So be careful!
       </p>
       <button id="start">Start Quiz!</button>
@@ -39,6 +40,7 @@
       <p>
         Enter your Initials: <input type="text" id="initials" max="3">
         <button id="submit">Submit</button>
+        <p id=putInitialsHere></p>
       </p>
     </div>
 
@@ -49,6 +51,7 @@
         <button id="restart">Play Again!</button>
         <button id="clear">Clear Scores</button>
       </div>
+      <br>
     </div>
 
   </main>

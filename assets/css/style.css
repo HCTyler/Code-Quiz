@@ -1,4 +1,28 @@
 /* ------------------------------Background styling-------------------------------- */
+h1 {
+  font-size: 50px;
+}
+
+h2 {
+  font-size: 40px;
+}
+
+p a div{
+  font-size: 20px;
+}
+a {
+  font-size: 20px;
+  text-decoration: none;
+  border-radius: 10%;
+}
+a:hover{
+  text-decoration: underline;
+}
+
+span {
+  font-size: 20px;
+}
+
 
 .backgroundVideo {
     position: fixed;
@@ -20,29 +44,44 @@
   flex-direction: column;
   align-items: center;
   justify-content:space-around;
-
 }
+
 .tidbit{
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
+  flex-wrap: nowrap;
+  justify-content: space-evenly;
+  align-items: baseline;
   margin: auto;
- 
-}
-.gameContainer{
-  width: 50%;
-  height: 50%;
-  margin: auto;
-  background:rgba(255, 255, 255, 0.50);
-  padding: 10px;
-  color: black;
-  outline: white;
-  outline-width: 50px;
+  /* column-gap: 90%; */
+  width: 100%;
 }
 
-.score .timer{
-  border-radius: 10px;
+.gameContainer{
+  /* width: 50%;
+  height: 50%;
+  margin: auto;
+  outline-width: 50px;
+  padding: 10px; */
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  min-height: 90vh;
+  width: 50%;
+
+  background:rgba(255, 255, 255, 0.50);
+  color: black;
+  outline: white;
 }
+
+.starting .question .ending .highscores{
+  border:5px ;
+  border-style: solid;
+
+}
+
 /* ---------------------------/end Container styling-------------------------------- */
 
 .button{

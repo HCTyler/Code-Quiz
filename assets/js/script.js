@@ -11,6 +11,14 @@ var initials = document.getElementById("initials")
 var feedback = document.getElementById("feedback")
 var gameEnding = document.getElementById("ending")
 var highscores = document.getElementById("highscores")
+var clear = document.getElementById("clear")
+var restart = document.getElementById("restart")
+var highscoresInitial = 
+JSON.parse(localStorage.getItem("highscoresInitial")) || []
+
+//this is the sounds
+var correct = new Audio("./assets/sfx/correct.wav")
+var wrong = new Audio("./assets/sfx/incorrect.wav")
 
 
 function startGame(){
@@ -48,9 +56,11 @@ function questionSelected(){
     } 
     timerInverval.textContent = time
     console.log("Go to the Wrong pathway")
+    wrong.play()
   } else {
     console.log("go to the right pathway")
-    time += 5 
+    time += 3 
+    correct.play()
   }
   allTheStuff++
 
@@ -77,11 +87,9 @@ function noMoStuff(){
 function showHighScores(){
   console.log("You clicked the button, so redirect to the highscores.")
 
-  var thename = initials.value.trim()
+  var thename = initials.value.toUpperCase().trim()
 
-  if (thename !== ""){
-    var highscoresInitial = 
-      JSON.parse(localStorage.getItem("highscoresInitial")) || []
+  if (thename !== "" && thename.length <4){
       console.log("Initials are saved to:", thename)
 
     var savingscores = {
@@ -93,28 +101,45 @@ function showHighScores(){
     console.log(highscoresInitial)
 
     highscoresInitial.push(savingscores)
-    // window.localStorage.setItem("highscoresInitial", JSON.stringify(highscoresInitial))
-    console.log(highscoresInitial)
-
-    gameEnding.setAttribute("class", "hide")
-    highscores.removeAttribute("class")
-
-    highscoresInitial.sort(function(initial,seconds){
-      return initial.score - seconds.score
-    })
-
-    console.log(highscoresInitial + " This is the sorting initials")
-
-    highscoresInitial.forEach(function(score){
-      var list = document.createElement("li")
-      list.textContent = score.thename + " has the time of "+ score.score
-      var listHolder = document.getElementById("highscores")
-      listHolder.appendChild(list)
-    })
+    highscorePush()
+  }
+  else{
+    var paragraph = document.getElementById("putInitialsHere");
+    var text = document.createTextNode("Initials needs to be between 1 to 3 letters. ");
+    paragraph.appendChild(text);
   }
 }
 
+function highscorePush(){
+  window.localStorage.setItem("highscoresInitial", JSON.stringify(highscoresInitial))
+  console.log(highscoresInitial)
+  document.getElementById("link").onclick=null
 
+  gameEnding.setAttribute("class", "hide")
+  highscores.removeAttribute("class")
+
+  highscoresInitial.sort(function(initial,seconds){
+    return initial.score - seconds.score
+  })
+
+  console.log(highscoresInitial + " This is the sorting initials")
+
+  highscoresInitial.forEach(function(score){
+    var list = document.createElement("li")
+    list.textContent = score.thename + " has the time of "+ score.score
+    var listHolder = document.getElementById("highscores")
+    listHolder.appendChild(list)
+  })
+}
+
+function viewHighScores(){
+  starting.setAttribute("class","hide")
+  questioncontain.setAttribute("class", "hide")
+  gameEnding.setAttribute("class", "hide")
+  highscores.removeAttribute("class")
+  console.log(highscoresInitial)
+  highscorePush()
+}
 
 //this is the function for timer
 function countdownTimer() {
@@ -129,8 +154,20 @@ function countdownTimer() {
   }
 }
 
+function clearGame(){
+  window.localStorage.removeItem("highscoresInitial")
+  window.location.reload()
+}
+
+function restartGame(){
+  window.location.reload()
+}
 
 startButton.onclick = startGame;
 submitButton.onclick = showHighScores;
+clear.onclick = clearGame;
+restart.onclick = restartGame
+
+
 
 
