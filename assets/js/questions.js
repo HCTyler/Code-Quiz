@@ -6,7 +6,7 @@ var thestuff = [
 
     },
     {
-        title: "What must a specimen label contain?",
+        title: "What must a specimen label NOT contain?",
         option: ["Name of CPT", "Specimen source", "Patient MRN"],
         answer: "Name of CPT"
 
