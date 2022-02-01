@@ -23,4 +23,4 @@ THEN I can save my initials and my score
 
 ## Screenshot
 
-![Screenshot of Coding Quiz application](.\assets\media\CodingQuizScreenshot.png)
+![Screenshot of Coding Quiz application](./assets/media/CodingQuizScreenshot.png)
